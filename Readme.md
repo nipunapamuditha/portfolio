@@ -10,7 +10,6 @@ A modern, responsive personal portfolio website showcasing my projects, skills, 
 - Next.js
 - Tailwind CSS
 - Framer Motion for animations
-- Vercel deployment
 
 ## Getting Started
 
@@ -56,10 +55,4 @@ portfolio/v2/
 └── README.md         # Project documentation
 ```
 
-## Deployment
 
-The site is configured to deploy automatically to Vercel when changes are pushed to the main branch.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
