@@ -1,7 +1,7 @@
 FROM node:22.13.1
 
 # Set the working directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
@@ -12,8 +12,8 @@ RUN npm install --legacy-peer-deps
 # Copy the rest of the application code
 COPY . .
 
-# Expose the application port
-EXPOSE 3000
+# Build the Next.js application
+RUN npm run build
 
-# Command to run the application
-CMD ["npx", "next", "start"]
+# Start the server
+CMD ["npm", "start"]
