@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DEPLOY_SERVER = "10.10.10.69"
-        DEPLOY_DIR = "/var/www"  // Changed to match your original installation path
+        DEPLOY_DIR = "/var/www/portfolio"  // Changed to match your original installation path
     }
     
     stages {
