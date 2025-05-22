@@ -49,9 +49,10 @@ pipeline {
                     
                     # Set proper permissions
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo chown -R www-data:www-data ${DEPLOY_DIR}"
-                    
-                    # Restart PM2 process
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 reload nextjs-app || pm2 start npm --name 'nextjs-app' -- run start"
+
+                    # Better PM2 process management
+                ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 delete nextjs-app || true && pm2 start npm --name 'nextjs-app' -- run start"
+                
                     
                     # Fix Nginx config with correct path and restart
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/proproxy_pass/proxy_pass/g' /etc/nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
