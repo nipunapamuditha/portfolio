@@ -8,21 +8,23 @@ const experiences = [
     period: "June 2022 - May 2024",
     location: "Tampa, FL (Remote)",
     description: [
-      "Implemented a browser-based Docker POS solution enabling seamless live demos for webview POS systems.",
-      "Automated backup processes for legacy POS services using AWS SDK, Session Manager, and Bash scripts, ensuring cloud service compatability for older POS hardware generations.",
-      "Developed a Python tool to efficiently track and verify payment statuses across multiple databases, snowflake and payment gateway, proactively identifying and troubleshooting discrepancies.",
-      "Worked with integration teams at Uber Eats, DoorDash, Paytronix, 7shifts, and Orca to update REST APIs and promptly resolve cross-platform issues.",
+      "Provided advanced technical support for the CAKE POS ecosystem (end user applications, infrastructure, payments), resolving critical technical incidents within SLA targets.",
+      "Engineered a Docker containerized POS demonstration service, streamlining deployment for sales teams and reducing demo setup time by 40%.",
+      "Automated critical workflows, including failed payment capture and customer notifications using Python and Bash, improving payment recovery rates by 25% and reducing manual effort.",
+      "Led integration testing using Postman and collaborated within Jenkins-based CI/CD workflows, contributing to design validation and issue resolution for consistent software delivery.",
+      "Collaborated with technical teams for third-party integrations (e.g., Uber Eats, DoorDash, Paytronix), resolving technical issues and ensuring seamless service operation."
     ],
   },
   {
-    title: "Associate System Engineer",
-    company: "SAKS",
+    title: "Associate Systems Engineer",
+    company: "SAKS Global",
     period: "August 2021 - June 2022",
     location: "Colombo, Sri Lanka",
     description: [
-      "Configured Nagios Core monitoring for multi-datacenter networks and servers, integrating SNMP alerts and automated email notifications.",
-      "Deployed Nextcloud, Zimbra mail, and Snipe-IT asset management system with high availability, reducing cloud costs by 30%.",
-      "Supported successful ISO 27001 certification, strengthening organizational security compliance.",
+      "Spearheaded disaster recovery protocol design and inventory management system implementation, aligning IT infrastructure with ISO 27001 standards.",
+      "Deployed and maintained virtualized infrastructure using Proxmox and VMware ESXi, achieving high availability for critical systems.",
+      "Implemented and managed Nagios Core monitoring with SMTP alerts for real-time infrastructure visibility, reducing incident response time by 25%.",
+      "Deployed and managed Nextcloud collaboration suite and Zimbra mail server, supporting 100+ daily users and ensuring secure data governance, contributing to a 30% reduction in B2B SaaS costs."
     ],
   },
   {
@@ -31,8 +33,8 @@ const experiences = [
     period: "June 2020 - October 2020",
     location: "Colombo, Sri Lanka",
     description: [
-      "Repaired DELL desktops, laptops, and servers.",
-      "Managed logistics operations at the service center.",
+      "Repaired and maintained DELL desktops, laptops, and servers.",
+      "Managed logistics operations at the service center, streamlining inventory and repair workflows."
     ],
   },
 ]
