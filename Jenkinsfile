@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DEPLOY_SERVER = "10.10.10.69"
-        DEPLOY_DIR = "/var/www/portfolio"  // Changed to match your original installation path
+        DEPLOY_DIR = "/www/portfolio"
     }
     
     stages {
@@ -41,24 +41,17 @@ pipeline {
                     # Install production dependencies
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR}_temp && npm install --omit=dev --force"
                     
-                    # Backup current deployment if it exists
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "if [ -d ${DEPLOY_DIR} ]; then sudo mv ${DEPLOY_DIR} ${DEPLOY_DIR}_backup_$(date +%Y%m%d_%H%M%S); fi"
-                    
-                    # Move temp directory to target location
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo mv ${DEPLOY_DIR}_temp ${DEPLOY_DIR}"
+                    # Remove old directory if exists and move temp to target
+                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo rm -rf ${DEPLOY_DIR} && sudo mv ${DEPLOY_DIR}_temp ${DEPLOY_DIR}"
                     
                     # Set proper permissions
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo chown -R www-data:www-data ${DEPLOY_DIR}"
 
-                    # Better PM2 process management
-                ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 delete nextjs-app || true && pm2 start npm --name 'nextjs-app' -- run start"
-                
+                    # PM2 process management - clean restart
+                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 delete nextjs-app || true && pm2 start npm --name 'nextjs-app' -- run start"
                     
                     # Fix Nginx config with correct path and restart
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/proproxy_pass/proxy_pass/g' /etc/nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
-                    
-                    # Clean old backups, keeping the 3 most recent
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "ls -td ${DEPLOY_DIR}_backup_* 2>/dev/null | tail -n +4 | xargs -r sudo rm -rf"
+                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/proproxy_pass/proxy_pass/g' /nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
                     '''
                 }
             }
