@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         DEPLOY_SERVER = "10.10.10.69"
-        DEPLOY_DIR = "/www/portfolio"  // Consistent path
+        DEPLOY_DIR = "/portfolio"  // Changed to match the actual deployment path in the logs
     }
     
     stages {
@@ -36,7 +36,7 @@ pipeline {
                     rsync -avz -e "ssh -o StrictHostKeyChecking=no" --exclude "node_modules" --exclude ".git" ./ jenkins@${DEPLOY_SERVER}:${DEPLOY_DIR}_temp/
                     
                     # Install production dependencies
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR}_temp && npm install --production --force"
+                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR}_temp && npm install --omit=dev --force"
                     
                     # Backup current deployment if it exists
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "if [ -d ${DEPLOY_DIR} ]; then sudo mv ${DEPLOY_DIR} ${DEPLOY_DIR}_backup_$(date +%Y%m%d_%H%M%S); fi"
@@ -50,7 +50,7 @@ pipeline {
                     # Restart PM2 process
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 reload nextjs-app || pm2 start npm --name 'nextjs-app' -- run start"
                     
-                    # Restart nginx (also fix the typo in nginx config if needed)
+                    # Fix Nginx config and restart (using correct path)
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/xy_pass/proxy_pass/g' /nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
                     
                     # Clean old backups, keeping the 3 most recent
