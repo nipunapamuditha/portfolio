@@ -51,7 +51,7 @@ pipeline {
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR} && pm2 delete nextjs-app || true && pm2 start npm --name 'nextjs-app' -- run start"
                     
                     # Fix Nginx config with correct path and restart
-                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/proproxy_pass/proxy_pass/g' /nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
+                    ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo sed -i 's/proproxy_pass/proxy_pass/g' /etc/nginx/sites-enabled/portfolio && sudo systemctl restart nginx"
                     '''
                 }
             }
