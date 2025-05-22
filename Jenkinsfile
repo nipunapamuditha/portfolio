@@ -41,10 +41,9 @@ pipeline {
                     # Install production dependencies
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "cd ${DEPLOY_DIR}_temp && npm install --omit=dev --force"
                     
-                 // ...existing code...
                     # Remove old directory if exists and move temp to target
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo rm -rf ${DEPLOY_DIR} && sudo mv ${DEPLOY_DIR}_temp ${DEPLOY_DIR}"
-// ...existing code...
+                    
                     # Set proper permissions
                     ssh -o StrictHostKeyChecking=no jenkins@${DEPLOY_SERVER} "sudo chown -R www-data:www-data ${DEPLOY_DIR}"
 
