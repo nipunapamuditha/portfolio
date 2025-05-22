@@ -11,12 +11,10 @@ export default function About() {
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
                 I'm a dedicated Site Reliability Engineer (SRE) based in Toronto, ON, with a strong focus on cloud infrastructure, automation, and technical support. My expertise spans across various cloud platforms and technologies, ensuring robust and efficient system operations.
               </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                Holding certifications as an AWS Certified Solutions Architect Associate, AWS Certified SysOps Administrator Associate, and Microsoft Certified: Azure Administrator Associate, I possess a solid technical foundation. My practical experience includes engineering a Docker containerized POS demonstration service that reduced demo setup time by 40%, and automating critical workflows using Python and Bash to improve payment recovery rates by 25%. I've also been instrumental in troubleshooting and developing fixes for Java applications on Linux subsystems and configuring multi-datacenter high-availability environments using Proxmox and VMware ESXi.
-              </p>
-              <p className="text-lg text-gray-700 dark:text-gray-300">
-                I am passionate about leveraging automation to build scalable and resilient systems that solve real-world problems. Currently, I am expanding my expertise by pursuing a Graduate Certificate in Cloud Computing at Loyalist College, expected December 2025.
-              </p>
+<p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+  I hold AWS SAA, AWS SysOps, and AZ-104 certifications. With 2+ years as a Site Reliability Engineer at Mad Mobile, one of the largest POS service providers in the U.S., I focused on enhancing system reliability, investigating and patching software bugs, managing incidents, and optimizing performance. In my free time, I build projects like Substack Co-Pilot (an AI news aggregator with Large Language Model-powered audio briefings) and contribute to open-source tools like Jellyfin, developing a containerized torrent-based backend solution for media servers.
+</p>
+    
 </CardContent>
 
           </Card>
