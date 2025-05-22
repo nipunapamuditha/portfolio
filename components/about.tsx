@@ -9,14 +9,14 @@ export default function About() {
           <Card>
           <CardContent className="pt-6">
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                I'm a Site Reliability Engineer based in Toronto, ON, passionate about building and maintaining reliable, scalable systems. My work mainly revolves around cloud infrastructure, automation, and solving technical challenges to keep systems running smoothly.
+               I'm a Site Reliability Engineer based in Toronto with hands-on experience in cloud computing and production support, particularly around incident management and software troubleshooting. I’ve worked directly with POS systems, tracking down and resolving critical bugs that impacted end users. On the infrastructure side, I’ve deployed and maintained virtualized environments using AWS as well as Proxmox and VMware, built internal tools with Docker and Python, and automated routine ops tasks to reduce manual overhead.
               </p>
 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
  I'm certified in AWS (SAA and SysOps) and Azure (AZ-104), and I bring over two years of experience from my time at Mad Mobile, a leading POS provider in the U.S. There, I worked on investigating and patching software bugs, managing incidents, and optimizing performance. 
 </p>
 
     <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-                Outside of work, I enjoy building personal projects like Substack Co-Pilot, and contributing to open-source products like Jellyfin, a media server—where I’ve developed a containerized, torrent-based backend solution to streamline media delivery.
+                Outside of work, I enjoy building personal projects like Substack Co-Pilot, and contributing to open-source products like Jellyfin, a media server where I’ve developed a containerized, torrent-based backend solution to streamline media delivery.
               </p>
     
 </CardContent>

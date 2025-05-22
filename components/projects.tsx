@@ -7,7 +7,7 @@ const projects = [
   {
     title: "Ad Skipper - Chrome Extension",
     description:
-      "Built Ad Skipper, a Chrome extension that uses LLMs to automatically detect and skip in-video sponsored segments on YouTube—eliminating reliance on crowdsourced data like SponsorBlock and addressing a gap conventional ad blockers can't cover.",
+      "Built Ad Skipper, a Chrome extension that uses LLMs to automatically detect and skip in-video sponsored segments on YouTube eliminating reliance on crowdsourced data like SponsorBlock and addressing a gap conventional ad blockers can't cover.",
     tags: ["Chrome Extension", "LLM", "JavaScript"],
     githubUrl: "https://github.com/nipunapamuditha/In-Video-Ad-Skipping-Chrome-Extension",
     liveUrl: "https://chromewebstore.google.com/detail/skip-in-video-ads/dclnaigapefcgpdkobpcofgifgpdfcnd",

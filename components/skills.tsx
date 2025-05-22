@@ -2,30 +2,87 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const skillCategories = [
-  {
-    category: "Cloud & Infrastructure",
-    skills: ["AWS CloudFormation", "Amazon ECS", "Azure", "Docker", "Proxmox", "MinION Object Storage"],
-  },
-  {
-    category: "DevOps & CI/CD",
-    skills: ["Continuous Integration", "Continuous Delivery", "Jenkins", "Git"],
-  },
-  {
-    category: "Programming & Development",
-    skills: ["JavaScript", "TypeScript", "Go", "C", "Bash", "Python"],
-  },
-  {
-    category: "Databases & Storage",
-    skills: ["MongoDB"],
-  },
-  {
-    category: "Networking & Security",
-    skills: ["Firewalls", "Cisco Routers", "Payment Card Processing"],
-  },
-  {
-    category: "Other Technologies",
-    skills: ["WordPress", "Software Support", "Azure AI Studio"],
-  },
+ {
+  category: "Cloud & Infrastructure",
+  skills: [
+    "AWS", 
+    "Azure", 
+    "AWS CloudFormation", 
+    "Amazon ECS", 
+    "Terraform", 
+    "Docker", 
+    "Proxmox", 
+    "VMware ESXi", 
+    "MinION Object Storage", 
+    "Windows Server", 
+    "Linux", 
+    "TCP/IP"
+  ],
+},
+{
+  category: "DevOps & CI/CD",
+  skills: [
+    "Continuous Integration", 
+    "Continuous Delivery", 
+    "Jenkins", 
+    "Git", 
+    "GitHub", 
+    "IaC (Terraform)", 
+    "Postman", 
+    "Nagios", 
+    "Graylog", 
+    "Sentry", 
+    "Incident Management"
+  ],
+},
+{
+  category: "Programming & Development",
+  skills: [
+    "Python", 
+    "Go", 
+    "JavaScript", 
+    "TypeScript", 
+    "Java", 
+    "C", 
+    "Bash", 
+    "SQL", 
+    "ROS"
+  ],
+},
+{
+  category: "Databases & Storage",
+  skills: [
+    "MongoDB", 
+    "CouchDB", 
+    "MySQL", 
+    "PostgreSQL", 
+    "Nextcloud"
+  ],
+},
+{
+  category: "Networking & Security",
+  skills: [
+    "Firewalls", 
+    "Cisco Routers", 
+    "TCP/IP", 
+    "Zimbra Mail Server", 
+    "ISO 27001", 
+    "Disaster Recovery", 
+    "Payment Card Processing"
+  ],
+},
+{
+  category: "Other Technologies",
+  skills: [
+    "Software Support", 
+    "Azure AI Studio", 
+    "Jira", 
+    "Office 365", 
+    "LLMs", 
+    "Text-to-Speech APIs", 
+    "RSS/API Integration"
+  ],
+},
 ]
 
 export default function Skills() {
